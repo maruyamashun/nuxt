@@ -2,8 +2,6 @@
 
 ## HelloWorld
 ```
-npm install -g @vue/cli
-クローンした場合
 npm install
 ```
 ```
@@ -17,6 +15,9 @@ npm run serve
 ```
 
 ## Vuetify
+```
+cd my-app
+```
 ```
 vue add vuetify
 ```
