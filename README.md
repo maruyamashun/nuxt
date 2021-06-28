@@ -10,6 +10,9 @@ npm install
 cd my-app
 ```
 ```
+npm install
+```
+```
 npm run serve
 ```
 
