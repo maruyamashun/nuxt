@@ -1,5 +1,8 @@
 # my-app
 
+## 日本語公式HP
+https://v3.ja.vuejs.org/guide/introduction.html
+
 ## Project setup
 ```
 npm install

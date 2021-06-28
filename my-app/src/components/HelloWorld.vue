@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-img :src="logo" class="my-3" contain height="200" />
+        <v-img :src="state.logo" class="my-3" contain height="200" />
       </v-col>
 
       <v-col class="mb-4">
@@ -24,7 +24,7 @@
 
         <v-row justify="center">
           <a
-            v-for="(next, i) in whatsNext"
+            v-for="(next, i) in state.whatsNext"
             :key="i"
             :href="next.href"
             class="subheading mx-3"
@@ -40,7 +40,7 @@
 
         <v-row justify="center">
           <a
-            v-for="(link, i) in importantLinks"
+            v-for="(link, i) in state.importantLinks"
             :key="i"
             :href="link.href"
             class="subheading mx-3"
@@ -56,7 +56,7 @@
 
         <v-row justify="center">
           <a
-            v-for="(eco, i) in ecosystem"
+            v-for="(eco, i) in state.ecosystem"
             :key="i"
             :href="eco.href"
             class="subheading mx-3"
@@ -72,58 +72,62 @@
 
 <script>
 import logo from "../assets/logo.svg";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "HelloWorld",
-
-  data: () => ({
-    ecosystem: [
-      {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader",
-      },
-      {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify",
-      },
-      {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify",
-      },
-    ],
-    importantLinks: [
-      {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com",
-      },
-      {
-        text: "Made with Vuetify",
-        href: "https://madewithvuejs.com/vuetify",
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs",
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify",
-      },
-    ],
-    logo,
-    whatsNext: [
-      {
-        text: "Explore components",
-        href: "https://vuetifyjs.com",
-      },
-      {
-        text: "Roadmap",
-        href: "https://vuetifyjs.com/introduction/roadmap/",
-      },
-      {
-        text: "Frequently Asked Questions",
-        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
-      },
-    ],
-  }),
-};
+  setup() {
+    // ここにリアクティブなデータ、関数を定義
+    const state = {
+      ecosystem: [
+        {
+          text: "vuetify-loader",
+          href: "https://github.com/vuetifyjs/vuetify-loader",
+        },
+        {
+          text: "github",
+          href: "https://github.com/vuetifyjs/vuetify",
+        },
+        {
+          text: "awesome-vuetify",
+          href: "https://github.com/vuetifyjs/awesome-vuetify",
+        },
+      ],
+      importantLinks: [
+        {
+          text: "Chat",
+          href: "https://community.vuetifyjs.com",
+        },
+        {
+          text: "Made with Vuetify",
+          href: "https://madewithvuejs.com/vuetify",
+        },
+        {
+          text: "Twitter",
+          href: "https://twitter.com/vuetifyjs",
+        },
+        {
+          text: "Articles",
+          href: "https://medium.com/vuetify",
+        },
+      ],
+      logo: logo,
+      whatsNext: [
+        {
+          text: "Explore components",
+          href: "https://vuetifyjs.com",
+        },
+        {
+          text: "Roadmap",
+          href: "https://vuetifyjs.com/introduction/roadmap/",
+        },
+        {
+          text: "Frequently Asked Questions",
+          href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
+        },
+      ],
+    };
+    return { state };
+  },
+});
 </script>
