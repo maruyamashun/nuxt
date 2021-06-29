@@ -5,11 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "hygen": "hygen component new"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
     "core-js": "^3.6.5",
+    "firebase": "^8.6.8",
+    "hygen": "^6.1.0",
     "roboto-fontface": "*",
     "vue": "^3.0.0",
     "vue-router": "^3.5.2",
