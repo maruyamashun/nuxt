@@ -73,6 +73,7 @@
 <script>
 import logo from "../assets/logo.svg";
 import { defineComponent } from "vue";
+// import firebase from "firebase";
 
 export default defineComponent({
   name: "HelloWorld",
@@ -127,6 +128,18 @@ export default defineComponent({
         },
       ],
     };
+    // const config = {
+    //   apiKey: "********************",
+    //   authDomain: "********************",
+    //   databaseURL: "********************",
+    //   projectId: "********************",
+    //   storageBucket: "********************",
+    //   messagingSenderId: "********************",
+    //   appId: "********************",
+    //   measurementId: "********************",
+    // };
+
+    // firebase.initializeApp(config);
     return { state };
   },
 });

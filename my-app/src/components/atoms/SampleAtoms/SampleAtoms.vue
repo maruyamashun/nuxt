@@ -1,40 +1,27 @@
 <template>
-  <div class="sample-atoms"></div>
+  <div class="sample-atoms">sample</div>
 </template>
-<script lang="ts">
-import {
-  defineComponent,
-  reactive,
-  SetupContext,
-  onMounted
-} from '@vue/composition-api'
-
-type Props = { text: string }
-type State = { text: string }
+<script>
+import { defineComponent, onMounted } from "vue";
 
 export default defineComponent({
-  name: 'SampleAtoms',
+  name: "SampleAtoms",
   props: {
-    text: { type: String, default: 'sample props' }
+    text: { type: String, default: "sample props" },
   },
-  setup(props: Props, context: SetupContext) {
-    const state = reactive<State>({
-      text: 'sample state'
-    })
-
+  setup(props, context) {
     const emit = () => {
-      context.emit('emit-sample', props.text)
-    }
+      context.emit("emit-sample", props.text);
+    };
 
-    onMounted(() => {})
+    onMounted(() => {});
 
     return {
-      state,
       props,
-      emit
-    }
-  }
-})
+      emit,
+    };
+  },
+});
 </script>
 <style lang="scss" scoped>
 /* .sample-atoms {

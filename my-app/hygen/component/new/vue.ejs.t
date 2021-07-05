@@ -7,24 +7,15 @@ to: src/components/<%= category %>/<%= name %>/<%= name %>.vue
 <script lang="ts">
 import {
   defineComponent,
-  reactive,
-  SetupContext,
   onMounted
-} from '@vue/composition-api'
-
-type Props = { text: string }
-type State = { text: string }
+} from 'vue'
 
 export default defineComponent({
   name: '<%= name %>',
   props: {
     text: { type: String, default: 'sample props' }
   },
-  setup(props: Props, context: SetupContext) {
-    const state = reactive<State>({
-      text: 'sample state'
-    })
-
+  setup(props, context) {
     const emit = () => {
       context.emit('emit-sample', props.text)
     }
